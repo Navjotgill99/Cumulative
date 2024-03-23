@@ -1,0 +1,12 @@
+﻿@model CumulativePart1.Models.Student
+@{
+    ViewBag.Title = "Show";
+}
+
+<a class="navlink" href="/Student/List">Back to Students</a>
+<div id="containershow">
+    <h2>@Model.StudentFname @Model.StudentLname</h2>
+    <p>Student Number: @Model.StudentNum</p>
+    <p>Enrol date: @Model.EnrolDate.ToShortDateString()</p>
+</div>
+

@@ -1,0 +1,27 @@
+﻿/* Set padding to keep content from hitting the edges */
+.body-content {
+    margin-top: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+body{
+    background: #100f0f;
+    color: #ffffff;
+}
+
+a{
+    text-decoration: none;
+    color: #c48134;
+}
+
+a:hover{
+    color: #ff0000;
+}
