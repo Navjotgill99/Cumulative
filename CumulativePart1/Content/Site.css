@@ -12,16 +12,57 @@ textarea {
     max-width: 280px;
 }
 
-body{
+body {
     background: #100f0f;
     color: #ffffff;
 }
 
-a{
+a {
     text-decoration: none;
-    color: #c48134;
+    color:#196b72;
 }
 
-a:hover{
-    color: #ff0000;
+a:hover {
+    color: #8f37b0;
+}
+
+nav{
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+.navlink{
+    float: left;
+}
+
+.dellink{
+    color: #dd1111;
+    float: right;
+}
+
+.delbutton {
+    display: block;
+    margin: 0 auto;
+    background: #dd1111;
+    color: #fff;
+    border: 2px solid #000;
+    border-radius: 3px;
+}
+
+#containerlist, containershow{
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 80px;
+}
+
+.listitem{
+    margin: 10px 0;
+}
+body {
+    background: #100f0f;
+    color: #ffffff;
+}
+
+a {
+    text-decoration: none;
+    color: #c48134;
 }
