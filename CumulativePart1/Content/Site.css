@@ -34,9 +34,33 @@ nav{
     float: left;
 }
 
+.delete{
+    display:flex;
+    flex-direction:row-reverse;
+    column-gap: 2em;
+}
+
+.link {
+    display: flex;
+    column-gap: 2em;
+}
+
 .dellink{
     color: #dd1111;
-    float: right;
+}
+
+.form-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.form-row label{
+    flex: 0.2;
+}
+
+.form-row input{
+    flex: 2;
 }
 
 .delbutton {

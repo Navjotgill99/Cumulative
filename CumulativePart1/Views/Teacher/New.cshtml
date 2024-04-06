@@ -68,29 +68,28 @@
         }
     </script>
     <form method="POST" action="/Teacher/Create" name="form_create">
-        <div>
+        <div class="form-row">
             <label for="TeacherFname">First name:</label>
             <input type="text" id="TeacherFname" name="TeacherFname" />
         </div>
-        <div>
+        <div class="form-row">
             <label for="TeacherLname">Last name:</label>
             <input type="text" id="TeacherLname" name="TeacherLname" />
         </div>
-        <div>
+        <div class="form-row">
             <label for="EmployeeNum">Employee Number:</label>
             <input type="text" id="EmployeeNum" name="EmployeeNum" />
         </div>
-        <div>
+        <div class="form-row">
             <label for="HireDate">Hire Date:</label>
             <input type="date" id="HireDate" name="HireDate" />
         </div>
-        <div>
+        <div class="form-row">
             <label for="TeacherSalary">Salary:</label>
             <input type="number" step=".01" id="TeacherSalary" name="TeacherSalary" />
         </div>
-        <div>
+        
             <button class="button" type="submit">Create Teacher</button>
-        </div>
 
         @if (ViewBag.Error != null)
         {

@@ -2,8 +2,6 @@
 @{
     ViewBag.Title = "DeleteConfirmAjax";
 }
-
-<h2>DeleteConfirmAjax</h2>
 <div id="containershow">
     <nav>
         <a class="navlink" href="/Teacher/Show/@Model.TeacherId">Cancel</a>
@@ -11,7 +9,7 @@
     <h2>Are you sure you want to delete @Model.TeacherFname @Model.TeacherLname with Ajax?</h2>
     <p>This action cannot be undone.</p>
     <form method="POST" action="/Teacher/Delete/@Model.TeacherId">
-        <button onclick="DeleteTeacher(@Model.TeacherId);">Confirm Delete</button>
+        <button class="delbutton" onclick="DeleteTeacher(@Model.TeacherId);">Confirm Delete</button>
     </form>
 
 </div>

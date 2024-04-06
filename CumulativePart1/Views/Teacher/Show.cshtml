@@ -6,8 +6,8 @@
 <div id="containershow">
     <nav>
         <a class="navlink" href="/Teacher/List">Back to Teachers</a>
-        <a class="dellink" href="/Teacher/DeleteConfirm/@Model.TeacherId">Delete</a>
-        <a class="dellink" href="/Teacher/DeleteConfirmAjax/@Model.TeacherId">Delete Teacher with AJAX</a>
+        <div class="delete"><a class="dellink" href="/Teacher/DeleteConfirm/@Model.TeacherId">Delete</a>
+        <a class="dellink" href="/Teacher/DeleteConfirmAjax/@Model.TeacherId">Delete Teacher with AJAX</a></div>
     </nav>
     <h2>@Model.TeacherFname @Model.TeacherLname</h2>
     <p>Employee Number: @Model.EmployeeNum</p>
