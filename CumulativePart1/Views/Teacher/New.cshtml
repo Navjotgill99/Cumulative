@@ -1,0 +1,107 @@
+﻿
+@{
+    ViewBag.Title = "New";
+}
+
+<div id="containershow">
+    <nav>
+        <a class="navlink" href="/Teacher/List">Back to Teachers</a>
+    </nav>
+    <h2>New Teacher</h2>
+    <script>
+        window.onload = function () {
+            var formHandle = document.forms.form_create;
+            formHandle.onsubmit = processForm;
+
+            function processForm() {
+                var TeacherFname = formHandle.TeacherFname;
+                var TeacherLname = formHandle.TeacherLname;
+                var EmployeeNum = formHandle.EmployeeNum;
+                var HireDate = formHandle.HireDate;
+                var TeacherSalary = formHandle.TeacherSalary;
+
+                if (TeacherFname.value === "") {
+                    TeacherFname.style.background = "red";
+                    TeacherFname.focus();
+                    return false;
+                }
+                else {
+                    TeacherFname.style.background = "white";
+                }
+
+                if (TeacherLname.value === "") {
+                    TeacherLname.style.background = "red";
+                    TeacherLname.focus();
+                    return false;
+                }
+                else {
+                    TeacherLname.style.background = "white";
+                }
+                var EmployeeNumRegEx = /(T)\d{3}$/;
+                if (EmployeeNum.value === "" || !EmployeeNumRegEx.test(EmployeeNum.value)) {
+                    EmployeeNum.style.background = "red";
+                    EmployeeNum.focus();
+                    return false;
+                }
+                else {
+                    EmployeeNum.style.background = "white";
+                }
+
+                if (HireDate.value === "") {
+                    HireDate.style.background = "red";
+                    HireDate.focus();
+                    return false;
+                }
+                else {
+                    HireDate.style.background = "white";
+                }
+
+                if (TeacherSalary.value === "") {
+                    TeacherSalary.style.background = "red";
+                    TeacherSalary.focus();
+                    return false;
+                }
+                else {
+                    TeacherSalary.style.background = "white";
+                }
+            }
+        }
+    </script>
+    <form method="POST" action="/Teacher/Create" name="form_create">
+        <div>
+            <label for="TeacherFname">First name:</label>
+            <input type="text" id="TeacherFname" name="TeacherFname" />
+        </div>
+        <div>
+            <label for="TeacherLname">Last name:</label>
+            <input type="text" id="TeacherLname" name="TeacherLname" />
+        </div>
+        <div>
+            <label for="EmployeeNum">Employee Number:</label>
+            <input type="text" id="EmployeeNum" name="EmployeeNum" />
+        </div>
+        <div>
+            <label for="HireDate">Hire Date:</label>
+            <input type="date" id="HireDate" name="HireDate" />
+        </div>
+        <div>
+            <label for="TeacherSalary">Salary:</label>
+            <input type="number" step=".01" id="TeacherSalary" name="TeacherSalary" />
+        </div>
+        <div>
+            <button class="button" type="submit">Create Teacher</button>
+        </div>
+
+        @if (ViewBag.Error != null)
+        {
+            <div>
+                <p class="error-message">@ViewBag.Error</p>
+            </div>
+        }
+
+    </form>
+</div>
+
+
+
+

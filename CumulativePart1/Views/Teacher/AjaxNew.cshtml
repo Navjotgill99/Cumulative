@@ -1,0 +1,37 @@
+﻿
+@{
+    ViewBag.Title = "AjaxNew";
+}
+
+<div id="containershow">
+    <nav>
+        <a class="navlink" href="/Teacher/list">Back To Teachers</a>
+    </nav>
+    <h2>New Teacher with Ajax</h2>
+
+    <form method="POST" action="/Teacher/Create" name="form_create">
+        <div>
+            <label for="TeacherFname">First name:</label>
+            <input type="text" id="TeacherFname" name="TeacherFname" />
+        </div>
+        <div>
+            <label for="TeacherLname">Last name:</label>
+            <input type="text" id="TeacherLname" name="TeacherLname" />
+        </div>
+        <div>
+            <label for="EmployeeNum">Employee Number:</label>
+            <input type="text" id="EmployeeNum" name="EmployeeNum" />
+        </div>
+        <div>
+            <label for="HireDate">Hire Date:</label>
+            <input type="date" id="HireDate" name="HireDate" />
+        </div>
+        <div>
+            <label for="TeacherSalary">Salary:</label>
+            <input type="number" step=".01" id="TeacherSalary" name="TeacherSalary" />
+        </div>
+
+        <button onclick="AddTeacher();">Add Teacher</button>
+        </form>
+</div>
+

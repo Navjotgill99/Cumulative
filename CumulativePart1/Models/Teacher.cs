@@ -15,9 +15,11 @@ namespace CumulativePart1.Models
 
         public string EmployeeNum { get; set; }
 
-        public string HireDate { get; set; }
+        public DateTime HireDate { get; set; }
 
         public decimal TeacherSalary { get; set; }
+
+        public List<Class> Classes { get; set; }
 
     }
 }

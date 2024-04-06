@@ -1,0 +1,19 @@
+﻿@model CumulativePart1.Models.Teacher
+@{
+    ViewBag.Title = "DeleteConfirmAjax";
+}
+
+<h2>DeleteConfirmAjax</h2>
+<div id="containershow">
+    <nav>
+        <a class="navlink" href="/Teacher/Show/@Model.TeacherId">Cancel</a>
+    </nav>
+    <h2>Are you sure you want to delete @Model.TeacherFname @Model.TeacherLname with Ajax?</h2>
+    <p>This action cannot be undone.</p>
+    <form method="POST" action="/Teacher/Delete/@Model.TeacherId">
+        <button onclick="DeleteTeacher(@Model.TeacherId);">Confirm Delete</button>
+        <p class="mt-3" id="ResponseText"></p>
+    </form>
+
+</div>
+

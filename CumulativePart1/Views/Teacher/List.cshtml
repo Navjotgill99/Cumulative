@@ -3,6 +3,10 @@
     ViewBag.Title = "List";
 }
 <div id="containerlist">
+    <nav>
+        <a class="navlink" href="/Teacher/New/"> Add New Teacher</a>
+        <a class="navlink" href="/Teacher/AjaxNew"> Add New Teacher With AJAX</a>
+    </nav>
     <h2>List of Teachers</h2>
     <form action="/Teacher/List" method="GET">
         <input type="text" name="Searchkey"/>

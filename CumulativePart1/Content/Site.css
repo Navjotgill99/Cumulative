@@ -14,12 +14,12 @@ textarea {
 
 body {
     background: #100f0f;
-    color: #ffffff;
+    color: #d5cbcb;
 }
 
 a {
     text-decoration: none;
-    color:#196b72;
+    color:#c48134;
 }
 
 a:hover {
@@ -47,6 +47,13 @@ nav{
     border: 2px solid #000;
     border-radius: 3px;
 }
+.button {
+    display: block;
+    background: #c48134;
+    color: #fff;
+    border: 2px solid #000;
+    border-radius: 3px;
+}
 
 #containerlist, containershow{
     width: 80%;
@@ -56,13 +63,4 @@ nav{
 
 .listitem{
     margin: 10px 0;
-}
-body {
-    background: #100f0f;
-    color: #ffffff;
-}
-
-a {
-    text-decoration: none;
-    color: #c48134;
 }
