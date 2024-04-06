@@ -8,7 +8,9 @@
         <a class="navlink" href="/Teacher/list">Back To Teachers</a>
     </nav>
     <h2>New Teacher with Ajax</h2>
-
+    @{ 
+        /*Ajax Request to add Teacher*/
+    }
     <form method="POST" action="/Teacher/Create" name="form_create">
         <div>
             <label for="TeacherFname">First name:</label>
@@ -32,6 +34,7 @@
         </div>
 
         <button onclick="AddTeacher();">Add Teacher</button>
+        <div id="msg"></div>
         </form>
 </div>
 

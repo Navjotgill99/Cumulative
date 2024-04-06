@@ -157,7 +157,7 @@ namespace CumulativePart1.Controllers
         }
 
         /// <summary>
-        /// This method will delete a new teacher from the database
+        /// This method will delete a teacher from the database
         /// </summary>
         /// <param name="id"></param>
         /// <example>
@@ -192,8 +192,6 @@ namespace CumulativePart1.Controllers
         /// Receives teacher information and enters it into the database
         /// </summary>
         /// <param name="NewTeacher"></param>
-        /// <return>
-        /// </return>
         /// <example>
         /// POST: /api/TeacherData/New
         /// </example>
