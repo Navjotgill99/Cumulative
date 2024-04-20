@@ -9,6 +9,7 @@
     </nav>
     <h2>Update Teacher</h2>
     <script>
+        // When window loads a function will be called
         window.onload = function () {
             var formHandle = document.forms.update_teacher;
             formHandle.onsubmit = processForm;
@@ -19,6 +20,7 @@
                 var EmployeeNum = formHandle.EmployeeNum;
                 var TeacherSalary = formHandle.TeacherSalary;
 
+                //validate input fields to make sure user fill all the fields.
                 if (TeacherFname.value === "") {
                     TeacherFname.style.background = "red";
                     document.getElementById('TeacherFnameError').textContent = "Please enter first name";
@@ -40,6 +42,7 @@
                     TeacherLname.style.background = "white";
                     document.getElementById('TeacherLnameError').textContent = "";
                 }
+                //validate employee id with RegEX to get certain type of input
                 var EmployeeNumRegEx = /(T)\d{3}$/;
                 if (EmployeeNum.value === "" || !EmployeeNumRegEx.test(EmployeeNum.value)) {
                     EmployeeNum.style.background = "red";

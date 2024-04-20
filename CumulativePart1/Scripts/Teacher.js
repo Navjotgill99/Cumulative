@@ -57,8 +57,10 @@
         xhr.onreadystatechange = function () {
             if (xhr.readyState == 4) {
                 if (xhr.status == 200) {
-
-                }
+                    window.location.href = "/Teacher/show" + data.TeacherId;
+                } else {
+                    message.innerHTML = "Update teacher failed. Status: " + xhr.status;
+                    }
             }
         }
         xhr.send(JSON.stringify(TeacherId));       

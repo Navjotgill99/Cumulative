@@ -230,9 +230,10 @@ namespace CumulativePart1.Controllers
         /// <summary>
         /// Updates a teacher on the MySql Database. Non-deterministic.
         /// </summary>
-        /// <param name="id"></param>
+        /// <param name="id"> The Id of the teacher that we want to update</param>
         /// <param name="TeacherInfo">An object with fields that map to the columns of the teacher's table</param>
-        /// POST : api/TeacherData/UpdateTeacher/5
+        /// <example>
+        /// POST : api/TeacherData/UpdateTeacher/{id}
         /// FROM DATA / POST DATA / REQUEST BODY
         /// {
         /// "TeacherFname" : "John"

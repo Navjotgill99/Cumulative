@@ -140,7 +140,7 @@ namespace CumulativePart1.Controllers
         /// Routes to a dynamically generated "Teacher Update" Page. gathers information from the database.
         /// </summary>
         /// <param name="id">Id of the Teacher</param>
-        /// <returns>a dynamic "Update Teacher" webpage which provides the current information of the author and asks the user for new information as a part of a form</returns>
+        /// <returns>a dynamic "Update Teacher" webpage which provides the current information of the teacher and asks the user for new information as a part of a form</returns>
         /// <example>GET : /Teacher/Update/{id}</example>
         public ActionResult Update(int id)
         {
@@ -149,6 +149,15 @@ namespace CumulativePart1.Controllers
             return View(SelectedTeacher);
         }
 
+        /// <summary>
+        /// Routes to a dynamically generated "Teacher Update" Page. Gathers information from the database.
+        /// </summary>
+        /// <param name="id">Id of the Teacher</param>
+        /// <returns>A dynamic "Update Teacher" webpage which provides the current information of the teacher and asks the user for new information as part of a Ajax request.</returns>
+        /// <example>
+        /// Example of GET request:
+        /// GET /Teacher/Ajax_Update/123
+        /// </example>
 
         public ActionResult Ajax_update(int id)
         {
