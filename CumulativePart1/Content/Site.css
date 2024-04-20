@@ -32,8 +32,8 @@ nav{
 }
 .navlink{
     float: left;
+    margin-right: 15px;
 }
-
 .delete{
     display:flex;
     flex-direction:row-reverse;
