@@ -1,0 +1,102 @@
+﻿@model CumulativePart1.Models.Teacher
+@{
+    ViewBag.Title = "Ajax_Update";
+}
+
+<div id="containershow">
+    <nav>
+        <a class="navlink" href="/Teacher/Show/@Model.TeacherId">Back</a>
+    </nav>
+    <h2>Update Teacher with AJAX</h2>
+    @{
+        /* AJAX Request to update author */
+    }
+
+    <script>
+        window.onload = function () {
+            var formHandle = document.forms.update_teacher;
+            formHandle.onsubmit = processForm;
+
+            function processForm() {
+                var TeacherFname = formHandle.TeacherFname;
+                var TeacherLname = formHandle.TeacherLname;
+                var EmployeeNum = formHandle.EmployeeNum;
+                var TeacherSalary = formHandle.TeacherSalary;
+
+                if (TeacherFname.value === "") {
+                    TeacherFname.style.background = "red";
+                    document.getElementById('TeacherFnameError').textContent = "Please enter first name";
+                    TeacherFname.focus();
+                    return false;
+                }
+                else {
+                    TeacherFname.style.background = "white";
+                    document.getElementById('TeacherFnameError').textContent = "";
+                }
+
+                if (TeacherLname.value === "") {
+                    TeacherLname.style.background = "red";
+                    document.getElementById('TeacherLnameError').textContent = "Please enter last name";
+                    TeacherLname.focus();
+                    return false;
+                }
+                else {
+                    TeacherLname.style.background = "white";
+                    document.getElementById('TeacherLnameError').textContent = "";
+                }
+                var EmployeeNumRegEx = /(T)\d{3}$/;
+                if (EmployeeNum.value === "" || !EmployeeNumRegEx.test(EmployeeNum.value)) {
+                    EmployeeNum.style.background = "red";
+                    document.getElementById('EmployeeNumError').textContent = "Please enter valid employee number starting with 'T' followed by 3 digits";
+                    EmployeeNum.focus();
+                    return false;
+                }
+                else {
+                    EmployeeNum.style.background = "white";
+                    document.getElementById('EmployeeNumError').textContent = "";
+                }
+
+                if (TeacherSalary.value === "" || TeacherSalary.value < 0) {
+                    TeacherSalary.style.background = "red";
+                    document.getElementById('TeacherSalaryError').textContent = "Please enter salary and it must be a positive number";
+                    TeacherSalary.focus();
+                    return false;
+                }
+                else {
+                    TeacherSalary.style.background = "white";
+                    document.getElementById('TeacherSalaryError').textContent = "";
+                }
+            }
+        }
+    </script>
+
+    <div class="form-row">
+        <label for="TeacherFname">First name:</label>
+        <input type="text" id="TeacherFname" name="TeacherFname" value="@Model.TeacherFname" />
+        <span id="TeacherFnameError" style="color: red;"></span>
+    </div>
+    <div class="form-row">
+        <label for="TeacherLname">Last name:</label>
+        <input type="text" id="TeacherLname" name="TeacherLname" value="@Model.TeacherLname" />
+        <span id="TeacherLnameError" style="color: red;"></span>
+    </div>
+    <div class="form-row">
+        <label for="EmployeeNum">Employee Number:</label>
+        <input type="text" id="EmployeeNum" name="EmployeeNum" value="@Model.EmployeeNum" />
+        <span id="EmployeeNumError" style="color: red;"></span>
+    </div>
+    <div class="form-row">
+        <label for="TeacherSalary">Salary:</label>
+        <input type="number" step=".01" id="TeacherSalary" name="TeacherSalary" value="@Model.TeacherSalary" />
+        <span id="TeacherSalaryError" style="color: red;"></span>
+    </div>
+
+    <button onclick="UpdateTeacher(@Model.TeacherId);">Update Teacher</button>
+
+    @if (ViewBag.Error != null)
+    {
+        <div>
+            <p class="error-message">@ViewBag.Error</p>
+        </div>
+    }
+</div>

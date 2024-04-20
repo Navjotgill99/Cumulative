@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -193,7 +194,7 @@ namespace CumulativePart1.Controllers
         /// </summary>
         /// <param name="NewTeacher"></param>
         /// <example>
-        /// POST: /api/TeacherData/New
+        /// POST: /api/TeacherData/AddTeacher
         /// </example>
         [HttpPost]
         public void AddTeacher([FromBody]Teacher NewTeacher)
@@ -224,5 +225,50 @@ namespace CumulativePart1.Controllers
             //close the connection between MYSQL database and web server
             Conn.Close();
         }
+
+
+        /// <summary>
+        /// Updates a teacher on the MySql Database. Non-deterministic.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="TeacherInfo">An object with fields that map to the columns of the teacher's table</param>
+        /// POST : api/TeacherData/UpdateTeacher/5
+        /// FROM DATA / POST DATA / REQUEST BODY
+        /// {
+        /// "TeacherFname" : "John"
+        /// "TeacherLname" : "Doe",
+        /// "EmployeeNum" : "T123",
+        /// "TeacherSalary" : $50
+        /// }
+        /// </example>
+        public void UpdateTeacher(int id, [FromBody]Teacher TeacherInfo)
+        {
+            //Create an instance of a connection
+            MySqlConnection Conn = Teacherdata.AccessDatabase();
+
+            //Open the connection between the web server and database
+            Conn.Open();
+
+            //Establish a new command (query) for our database
+            MySqlCommand cmd = Conn.CreateCommand();
+
+            //SQL QUERY
+            string query = "update teachers set teacherfname=@TeacherFname, teacherlname=@TeacherLname, employeenumber=@EmployeeNum, salary=@TeacherSalary where teacherid = @TeacherId";
+            cmd.CommandText = query;
+            cmd.Parameters.AddWithValue("@TeacherFname", TeacherInfo.TeacherFname);
+            cmd.Parameters.AddWithValue("@TeacherLname", TeacherInfo.TeacherLname);
+            cmd.Parameters.AddWithValue("@EmployeeNum", TeacherInfo.EmployeeNum);
+            cmd.Parameters.AddWithValue("@TeacherSalary", TeacherInfo.TeacherSalary);
+            cmd.Parameters.AddWithValue("@TeacherId", id );
+
+            cmd.Prepare();
+
+            cmd.ExecuteNonQuery();
+
+            //close the connection between MYSQL database and web server
+            Conn.Close();
+
+        }
+
     }
 }

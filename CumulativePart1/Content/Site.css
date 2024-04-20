@@ -32,21 +32,17 @@ nav{
 }
 .navlink{
     float: left;
-    margin-right: 15px;
-}
-.delete{
-    display:flex;
-    flex-direction:row-reverse;
-    column-gap: 2em;
 }
 
-.link {
-    display: flex;
-    column-gap: 2em;
+.updatelink {
+    float: right;
+    margin-left: 15px;
 }
 
-.dellink{
+.dellink {
     color: #dd1111;
+    float: right;
+    margin-left: 15px;
 }
 
 .form-row {
